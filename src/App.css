@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 100px;
   pointer-events: none;
 }
 
@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,127 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.gallery {
+  box-sizing: content;
+  position: relative;
+  top: 10vh;
+  right: 30vw;
+  left: 10vw;
+  height: 50vh;
+  width: auto;
+  border: 3px solid black;
+}
+
+.embla {
+  position: relative;
+  background-color: #f7f7f7;
+  max-width: 80%;
+  left: 20%;
+  height: 100%;
+}
+
+.embla--thumb {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.vertical__viewport {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.embla__viewport.is-draggable {
+  cursor: move;
+  cursor: grab;
+}
+
+.embla__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  height: 100%;
+}
+
+.vertical__container {
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  height: 200px;
+  width: auto;
+}
+
+.embla__slide {
+  min-width: 100%;
+}
+
+.embla__slide__inner {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.embla__slide__img {
+  position: absolute;
+  display: block;
+  width: auto;
+  max-height: 100%;
+}
+
+.embla__container--thumb {
+  cursor: default;
+}
+
+.embla__slide--thumb {
+  height: 100%;
+  max-width: 100%;
+}
+
+.embla__slide__inner--thumb {
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 10;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: white;
+}
+
+.embla__slide__thumbnail {
+  position: absolute;
+  opacity: 0.6;
+  top: 0;
+  bottom: 0;
+  left: -10000%;
+  right: -10000%;
+  margin: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: none;
+  transition: opacity 0.3s;
+}
+
+.embla__slide--thumb.is-selected .embla__slide__thumbnail {
+  opacity: 1;
 }
